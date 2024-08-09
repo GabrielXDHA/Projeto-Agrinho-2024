@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oportunidades Rurais</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header>
+        <div class="container">
+            <h1>Oportunidades Rurais</h1>
+            <nav>
+                <ul>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#depoimentos">Depoimentos</a></li>
+                    <li><a href="#enviar-depoimento">Enviar Depoimento</a></li>
+                    <li><a href="#como-encontrar">Como Encontrar Oportunidades</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Sobre -->
+    <section id="sobre">
+        <div class="container">
+            <h2>O que são Oportunidades Rurais?</h2>
+            <p>O termo "Oportunidades Rurais" refere-se às diversas possibilidades de desenvolvimento econômico, social e pessoal que estão disponíveis nas áreas rurais. Estas oportunidades podem abranger uma ampla gama de atividades e iniciativas que valorizam os recursos naturais e as características específicas do ambiente rural. O site Oportunidades Rurais é um espaço dedicado para compartilhar histórias e depoimentos de oportunidades que pessoas encontraram em áreas rurais. Seja uma oportunidade de emprego, negócio, projeto social, ou qualquer outra forma de oportunidade que contribua para o desenvolvimento rural, aqui você pode compartilhar e encontrar inspiração.</p>
+        </div>
+    </section>
+
+    <!-- Conteúdo Principal (Depoimentos) -->
+    <main>
+        <section id="depoimentos">
+            <div class="container">
+                <h2>Depoimentos</h2>
+                <ul id="lista-depoimentos">
+                    <!-- Aqui serão listados os depoimentos -->
+                    <li>
+                        <h3>João Gustavo</h3>
+                        <p>Oi, pessoal! Meu nome é João, e venho de uma pequena fazenda onde cresci ajudando meu pai com os trabalhos no campo. Recentemente, recebi uma oportunidade incrível de trabalhar em uma empresa na cidade grande. Nunca imaginei que um dia teria a chance de entrar em um ambiente corporativo, e estou tanto animado quanto um pouco apreensivo com essa mudança. A cidade é um mundo totalmente novo para mim, com seus prédios altos e a correria constante. Vou sentir falta da paz e da simplicidade do campo, mas estou ansioso para aprender e crescer nessa nova fase da minha vida. Espero trazer um pouco da dedicação e do espírito de trabalho duro do campo para a empresa e fazer uma boa impressão.</p>
+                    </li>
+                    <li>
+                        <h3>Maria de oliveira</h3>
+                        <p>Oi, sou Maria! Cresci em uma pequena vila no campo, onde a vida era tranquila e a rotina girava em torno da colheita e das festas de comunidade. Há alguns dias, recebi a notícia de que fui escolhida para trabalhar em um restaurante na cidade grande. Estou muito empolgada, embora também sinta um frio na barriga. A ideia de estar em um lugar tão movimentado e cheio de oportunidades é incrível, mas vou sentir falta das conversas longas com meus vizinhos e do cheiro da terra fresca. Espero que essa experiência na cidade me ajude a crescer e a descobrir novos talentos que nem sabia que tinha. Vou levar um pouco do calor e da simplicidade do campo comigo, esperando que isso faça a diferença onde quer que eu vá.</p>
+                    </li>
+                    <!-- Exemplo de mais depoimentos -->
+                </ul>
+            </div>
+        </section>
+
+        <!-- Enviar Depoimento -->
+        <section id="enviar-depoimento">
+            <div class="container">
+                <h2>Enviar Depoimento</h2>
+                <form id="form-depoimento">
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome" required>
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="mensagem">Mensagem:</label>
+                    <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
+
+                    <label for="imagem">Anexar Imagem (opcional):</label>
+                    <input type="file" id="imagem" name="imagem" accept="image/*">
+
+                    <input type="submit" value="Enviar">
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Como Encontrar Oportunidades -->
+    <section id="como-encontrar">
+        <div class="container">
+            <h2>Como encontrar Oportunidades Rurais?</h2>
+            <p>Existem diversas formas de encontrar oportunidades rurais. Você pode participar de grupos locais, buscar em redes sociais específicas, visitar feiras e eventos, entre outras estratégias. Esteja aberto para explorar e compartilhar suas descobertas aqui!</p>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Oportunidades Rurais. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Script JavaScript para simular o envio de depoimento -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const formDepoimento = document.getElementById('form-depoimento');
+            const listaDepoimentos = document.getElementById('lista-depoimentos');
+
+            formDepoimento.addEventListener('submit', function(event) {
+                event.preventDefault(); // Previne o envio padrão do formulário
+
+                // Captura dos valores do formulário
+                const nome = document.getElementById('nome').value;
+                const mensagem = document.getElementById('mensagem').value;
+
+                // Criação de um novo item de depoimento
+                const novoDepoimento = document.createElement('li');
+                novoDepoimento.innerHTML = `
+                    <h3>${nome}</h3>
+                    <p>${mensagem}</p>
+                `;
+
+                // Adiciona o novo depoimento à lista
+                listaDepoimentos.appendChild(novoDepoimento);
+
+                // Limpa os campos do formulário após o envio
+                formDepoimento.reset();
+            });
+        });
+    </script>
+</body>
+</html>
